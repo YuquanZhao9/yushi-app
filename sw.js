@@ -1,5 +1,5 @@
-const CACHE='yushi-m-be64f22114e7';
-const FILES=["./","./index.html","./manifest.webmanifest","./assets/index-117CBFwz.js","./assets/index-W5sKfkg8.css","./apple-touch-icon.png","./icon-192.png","./icon-512.png","./icon-maskable-512.png","./icon.svg"];
+const CACHE='yushi-m-66ca4aab1983';
+const FILES=["./","./index.html","./manifest.webmanifest","./assets/index-BewnolqS.js","./assets/index-CFI7Gcaf.css","./apple-touch-icon.png","./icon-192.png","./icon-512.png","./icon-maskable-512.png","./icon.svg"];
 self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES)));});
 self.addEventListener('activate',e=>e.waitUntil(Promise.all([self.clients.claim(),caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('yushi-m-')&&k!==CACHE).map(k=>caches.delete(k))))])));
 self.addEventListener('fetch',e=>{const u=new URL(e.request.url);if(e.request.method!=='GET'||u.origin!==self.location.origin)return;
